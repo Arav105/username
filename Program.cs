@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,22 +11,17 @@ namespace username
     {
         static void Main(string[] args)
         {
-            string userName;
-         Again:
-            Console.WriteLine("Enter User Name");
-            userName=Console.ReadLine();
-
-            if (userName.Length >= 6)
+            for(int i = 1; i < 10; i++)
             {
-                Console.WriteLine("Welcome: it " + userName);
+                if (i == 6)
+                {
+                    goto end;
+                }
+                Console.WriteLine("i value:{0}", i);
             }
-            else
-            {
-
-                Console.WriteLine("Invalid User Name"); 
-                goto Again;
-            }
+        end: Console.WriteLine("The End");
             Console.ReadKey();
+
         }
     }
 }
